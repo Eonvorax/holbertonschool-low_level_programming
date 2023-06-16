@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	char quote[50] = "and that piece of art is useful\" ";
-	fwrite(quote, sizeof(quote), 1, stderr);
-	char quote[50] = "- Dora Korpar, 2015-10-19\n";
-	fwrite(quote, sizeof(quote), 1, stderr);
+	char quote_1[50] = "and that piece of art is useful\" ";
+	fwrite(quote, sizeof(quote1), 1, stderr);
+	char quote_2[50] = "- Dora Korpar, 2015-10-19\n";
+	fwrite(quote, sizeof(quote2), 1, stderr);
 	return (1);
 }
