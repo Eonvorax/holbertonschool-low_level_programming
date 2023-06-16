@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	q1_len = strlen("and that piece of art is useful\" ");
-	q2_len = strlen("- Dora Korpar, 2015-10-19\n");
+	int q1_len = strlen("and that piece of art is useful\" ");
+	int q2_len = strlen("- Dora Korpar, 2015-10-19\n");
 	char quote_1[q1_len] = "and that piece of art is useful\" ";
 	char quote_2[q2_len] = "- Dora Korpar, 2015-10-19\n";
 
