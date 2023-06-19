@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "main.h"
 /**
  * main - prints "_putchar" and a newline
  * Return: 0

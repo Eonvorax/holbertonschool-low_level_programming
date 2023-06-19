@@ -1,10 +1,7 @@
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdio.h>
 
-/**
- * main - header file with all prototypes
- * Return: 0
- */
-int main(void)
-{
-	return (0);
-}
+int _putchar(char c);
+
+#endif
