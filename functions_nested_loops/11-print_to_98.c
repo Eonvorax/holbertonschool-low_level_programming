@@ -25,6 +25,10 @@ void print_to_98(int n)
 		{
 			div *= 10;
 		}
+		if (res == 0)
+		{
+			_putchar('0');
+		}
 		while (res != 0)
 		{
 			_putchar((res / div) + '0');
