@@ -9,11 +9,12 @@ void puts_half(char *s)
 	int beg, end;
 
 	end = 0;
+	beg = 0;
 	while ((s[end] != '\0'))
 	{
 		end++;
 	}
-	while (beg < ((end - 1) / 2))
+	while (beg <= ((end - 1) / 2))
 	{
 		beg++;
 	}
