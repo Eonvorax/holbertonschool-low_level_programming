@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * _atoi - returns length of string from pointer
  * @s : pointer to string
@@ -11,7 +12,7 @@ int _atoi(char *s)
 	n = 0;
 	sign = 0;
 	i = 0;
-	while (!((s[i] >= '0') && (s[i] <= '9')))
+	while (!((s[i] >= '0') && (s[i] <= '9')) && (s[i] != '\0'))
 	{
 		if (s[i] == '-')
 		{
@@ -22,6 +23,8 @@ int _atoi(char *s)
 	while (((s[i] >= '0') && (s[i] <= '9')))
 	{
 		n *= 10;
+		if (n + (s[i] - '0') > INT_MAX)
+			return (INT_MIN);
 		n += (s[i] - '0');
 		i++;
 	}
