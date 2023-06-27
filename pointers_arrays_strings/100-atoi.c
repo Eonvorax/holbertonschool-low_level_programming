@@ -19,16 +19,13 @@ int _atoi(char *s)
 		}
 		i++;
 	}
-	if (s[i] != '\0')
-		return (0);
-/* TODO return (n) at the end ?*/
 	while (((s[i] >= '0') && (s[i] <= '9')))
 	{
 		n *= 10;
 		n += (s[i] - '0');
 		i++;
 	}
-	if ((sign % 2 == 0))
+	if ((sign % 2 != 0))
 		n *= -1;
 	return (n);
 }
