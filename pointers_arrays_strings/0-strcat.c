@@ -5,22 +5,22 @@
  * @dest : destination string for concatenated strings
  * Return: char *
  */
-char *_strcpy(char *dest, char *src)
+char *_strcat(char *dest, char *src)
 {
-	int i, n;
+	int dest_len, i;
 
+	dest_len = 0;
 	i = 0;
-	while ((dest[i] != '\0'))
+	while (dest[dest_len] != '\0')
 	{
+		dest_len++;
+	}
+	while (src[i] != '\0')
+	{
+		dest[dest_len] = src[i];
+		dest_len++;
 		i++;
 	}
-	n = i;
-	i = 0;
-	while ((i < n))
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
+	dest[dest_len] = '\0';
 	return (dest);
 }
