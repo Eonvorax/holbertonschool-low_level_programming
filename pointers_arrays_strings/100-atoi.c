@@ -23,7 +23,7 @@ int _atoi(char *s)
 	while (((s[i] >= '0') && (s[i] <= '9')))
 	{
 		n *= 10;
-		if (n + (s[i] - '0') > INT_MAX)
+		if ((n + (s[i] - '0') * -1) <= INT_MIN)
 			return (INT_MIN);
 		n += (s[i] - '0');
 		i++;
