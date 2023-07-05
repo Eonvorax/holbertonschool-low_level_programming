@@ -9,4 +9,6 @@ void slim_shady(char *argv[]);
 
 void print_args(int argc, char *argv[]);
 
+void print_argc(int argc);
+
 #endif
