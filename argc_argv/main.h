@@ -11,4 +11,6 @@ void print_args(int argc, char *argv[]);
 
 void print_argc(int argc);
 
+void mul(int argc, char *argv[]);
+
 #endif
