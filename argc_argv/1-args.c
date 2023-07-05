@@ -6,7 +6,7 @@
  */
 void print_argc(int argc)
 {
-	printf("%d\n", argc);
+	printf("%d\n", (argc - 1));
 }
 /**
  * main - prints argc
