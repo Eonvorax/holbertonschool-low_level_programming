@@ -7,4 +7,6 @@ int _putchar(char c);
 
 void slim_shady(char *argv[]);
 
+void print_args(int argc, char *argv[]);
+
 #endif
