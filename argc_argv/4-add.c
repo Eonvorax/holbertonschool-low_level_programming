@@ -12,7 +12,7 @@ int add(int argc, char *argv[])
 	sum = 0;
 	for (i = 1; i < argc; i++)
 	{
-		char * t_arg;
+		char *t_arg;
 
 		t_arg = argv[i];
 		for (j = 0; (t_arg[j]) != '\0'; j++)
