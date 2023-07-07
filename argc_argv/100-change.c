@@ -58,6 +58,9 @@ int main(int argc, char *argv[])
 	{
 		printf("0\n");
 	}
-	printf("%d\n", change(atoi(argv[argc - 1])));
+	else
+	{
+		printf("%d\n", change(atoi(argv[argc - 1])));
+	}
 	return (0);
 }
