@@ -28,7 +28,7 @@ int rev_pal(char *s, char *end_s)
 	{
 		return (1);
 	}
-	return rev_pal(s + 1, end_s - 1);
+	return (rev_pal(s + 1, end_s - 1));
 }
 /**
  * is_palindrome - returns 1 if string is palindrome, 0 if not
