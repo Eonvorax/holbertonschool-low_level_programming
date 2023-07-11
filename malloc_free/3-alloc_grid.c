@@ -14,14 +14,14 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
-	mat = malloc(sizeof(int *) * height);
+	mat = malloc(sizeof(*mat) * height);
 	if (mat == NULL)
 	{
 		return (NULL);
 	}
 	for (l = 0; l < height; l++)
 	{
-		mat[l] = malloc(sizeof(int) * width);
+		mat[l] = malloc(sizeof(*mat[l]) * width);
 		if (mat[l] == NULL)
 		{
 			return (NULL);
