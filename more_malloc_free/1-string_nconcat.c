@@ -28,7 +28,7 @@ unsigned int ncat_size(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		for (i = 0; (s2[i] != '\0') && ((i + 1) < n); i++)
+		for (i = 0; (s2[i] != '\0') && (i < n); i++)
 			;
 	}
 	size += i;
