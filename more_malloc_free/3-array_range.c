@@ -8,7 +8,7 @@
 int *array_range(int min, int max)
 {
 	int *a = NULL;
-	int i;
+	int i, n;
 
 	if (min > max)
 	{
@@ -19,9 +19,11 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	for (i = min; i <= max; i++)
+	n = min;
+	for (i = 0; i < (max - min + 1); i++)
 	{
-		a[i] = i;
+		a[i] = n;
+		n++;
 	}
 	return (a);
 }
