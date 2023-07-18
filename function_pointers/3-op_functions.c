@@ -36,3 +36,20 @@ int op_mul(int a, int b)
  * op_div - return int a divided by int b
  * @a: int a
  * @b: int b
+ * Return: int quotient of int a divided by int b
+ */
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+
+/**
+ * op_mod - return int a modulo int b
+ * @a: int a
+ * @b: int b
+ * Return: int modulo of int a by int b
+ */
+int op_mod(int a, int b)
+{
+	return (a % b);
+}
