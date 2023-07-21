@@ -7,39 +7,38 @@
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i_format, i_h, i_arg, count;
-	va_list args;
+	int i_f = 0;
 	char *str;
-	typedef struct hash
-	{
-		char *type;
-		char *print_arg;
-	} format_t;
-	format_t h[] = {
-		{"c", "%c"},
-		{"i", "%d"},
-		{"f", "%f"},
-		{"s", "%s"},
-		{NULL, NULL}
-	};
+	char *sep = "";
+	va_list list;
 
-	count = 0;
-	va_start(args, count);
-	i_format = 0;
-	while (format[i_format] != '\0')
+	va_start(list, format);
+	while (format && format[i_f])
 	{
-		i_h = 0;
-		str = arg(args, char*);
-		while (h[i_h].type != format[i_format] && h[i_h].type != NULL)
+		switch (format[i_f])
 		{
-			i_h++;
+		case 'c':
+			printf("%s%c", sep, va_arg(list, int));
+			break;
+		case 'i':
+			printf("%s%d", sep, va_arg(list, int));
+			break;
+		case 'f':
+			printf("%s%f", sep, va_arg(list, double));
+			break;
+		case 's':
+			str = va_arg(list, char *);
+			if (!str)
+				str = "(nil)";
+			printf("%s%s", sep, str);
+			break;
+		default:
+			i_f++;
+			continue;
 		}
-		if (h[i_h].type != NULL)
-			printf(h[i_h].print_arg, str);
-		if (str == NULL)
-			printf("(nil)");
-		printf(", ");
-		i_format++;
+		sep = ", ";
+		i_f++;
 	}
+	va_end(list);
 	printf("\n");
 }
