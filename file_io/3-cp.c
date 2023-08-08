@@ -5,11 +5,12 @@
  * @filename: name of file to open
  *
  * Return: int file descriptor
-*/
+ */
 int open_r(const char *filename)
 {
-    int fd;
-    if (filename == NULL)
+	int fd;
+
+	if (filename == NULL)
 	{
 		return (-1);
 	}
@@ -26,15 +27,17 @@ int open_r(const char *filename)
  * @filename: name of file to open
  *
  * Return: int file descriptor
-*/
+ */
 int open_w(const char *filename)
 {
-    int fd;
-    if (filename == NULL)
+	int fd;
+
+	if (filename == NULL)
 	{
 		return (-1);
 	}
-	fd = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 00644);
+	fd = open(filename, (O_WRONLY | O_CREAT | O_TRUNC), (S_IRUSR | S_IWUSR |
+			S_IRGRP | S_IWGRP | S_IROTH));
 	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
@@ -48,7 +51,7 @@ int open_w(const char *filename)
  * @fd: file descriptor
  *
  * Return: nothing
-*/
+ */
 void close_fd(int fd)
 {
 	if (close(fd) == -1)
@@ -63,12 +66,13 @@ void close_fd(int fd)
  * @dest: destination file to copy to
  *
  * Return: 0
-*/
+ */
 void _cp(const char *src, const char *dest)
 {
 	char buffer[1024];
 	ssize_t bytes_w, bytes_r;
 	int fd_src, fd_dest;
+
 	fd_src = open_r(src);
 	fd_dest = open_w(dest);
 
@@ -92,6 +96,13 @@ void _cp(const char *src, const char *dest)
 	close_fd(fd_dest);
 }
 
+/**
+ * main - handles usage error and calls cp
+ * @argc: int number of args (should be 3)
+ * @argv: array of given args
+ *
+ * Return: 0
+ */
 int main(int argc, char *argv[])
 {
 	if (argc != 3)
