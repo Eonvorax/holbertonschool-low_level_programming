@@ -20,7 +20,7 @@ void hash_table_print(const hash_table_t *ht)
 			current = ht->array[i];
 			while (current != NULL)
 			{
-				if (!first_element)
+				if (first_element == 0)
 				{
 					printf(", ");
 				}
